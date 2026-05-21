@@ -1,733 +1,115 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>OKN LLC | 取扱商品一覧</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-  --black:#111111;
-  --gray:#777777;
-  --light:#f5f5f5;
-  --white:#ffffff;
-  --border:#e5e5e5;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Noto Sans JP',sans-serif;
-  background:var(--light);
-  color:var(--black);
-  line-height:1.7;
-}
-
-/* ======================
-HEADER
-====================== */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:9999;
-  height:68px;
-  background:rgba(17,17,17,.96);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 24px;
-  backdrop-filter:blur(10px);
-}
-
-.logo{
-  color:#fff;
-  text-decoration:none;
-  font-family:'Montserrat',sans-serif;
-  font-size:30px;
-  letter-spacing:.08em;
-}
-
-.logo span{
-  opacity:.45;
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-nav a{
-  color:rgba(255,255,255,.75);
-  text-decoration:none;
-  font-size:13px;
-  transition:.25s;
-}
-
-nav a:hover{
-  color:#fff;
-}
-
-.nav-btn{
-  background:#fff;
-  color:#111 !important;
-  padding:8px 16px;
-  border-radius:8px;
-  font-weight:700;
-}
-
-/* ======================
-HERO
-====================== */
-
-.hero{
-  background:
-  linear-gradient(
-    135deg,
-    #111111 0%,
-    #2d2d2d 100%
-  );
-
-  padding:110px 24px;
-}
-
-.hero-inner{
-  max-width:1200px;
-  margin:auto;
-}
-
-.hero h1{
-  color:#fff;
-  font-size:64px;
-  line-height:1;
-  font-family:'Montserrat',sans-serif;
-}
-
-.hero h1 span{
-  opacity:.45;
-}
-
-.hero p{
-  margin-top:18px;
-  color:rgba(255,255,255,.72);
-  font-size:15px;
-}
-
-/* ======================
-MAIN
-====================== */
-
-main{
-  max-width:1200px;
-  margin:auto;
-  padding:60px 20px 90px;
-}
-
-.section{
-  margin-bottom:80px;
-}
-
-.section-header{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  margin-bottom:28px;
-  border-bottom:1px solid var(--border);
-  padding-bottom:14px;
-}
-
-.section-title{
-  font-size:28px;
-  font-weight:700;
-}
-
-.section-en{
-  font-size:12px;
-  letter-spacing:.12em;
-  color:#999;
-}
-
-.section-badge{
-  margin-left:auto;
-  background:#111;
-  color:#fff;
-  padding:5px 12px;
-  border-radius:6px;
-  font-size:11px;
-}
-
-/* ======================
-GRID
-====================== */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:26px;
-}
-
-.card{
-  background:#fff;
-  border-radius:18px;
-  overflow:hidden;
-  border:1px solid #e7e7e7;
-  transition:.35s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 16px 40px rgba(0,0,0,.08);
-}
-
-.card-img{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  display:block;
-}
-
-.card-body{
-  padding:24px;
-}
-
-.qty{
-  display:inline-block;
-  background:#f0f0f0;
-  padding:5px 12px;
-  border-radius:30px;
-  font-size:11px;
-  font-weight:700;
-  margin-bottom:14px;
-}
-
-.card-title{
-  font-size:22px;
-  font-weight:700;
-  margin-bottom:14px;
-}
-
-.card-text{
-  font-size:13px;
-  color:#666;
-  margin-bottom:22px;
-}
-
-.card-text span{
-  display:block;
-  margin-bottom:6px;
-}
-
-.btn{
-  display:block;
-  text-align:center;
-  background:#111;
-  color:#fff;
-  text-decoration:none;
-  padding:13px;
-  border-radius:10px;
-  font-size:13px;
-  font-weight:700;
-  transition:.25s;
-}
-
-.btn:hover{
-  background:#333;
-}
-
-/* ======================
-KICKBOARD
-====================== */
-
-.kickboard{
-  background:#111;
-  color:#fff;
-  border-radius:24px;
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-}
-
-.kickboard img{
-  width:100%;
-  height:100%;
-  min-height:520px;
-  object-fit:cover;
-}
-
-.kb-content{
-  padding:50px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.kb-tag{
-  background:#fff;
-  color:#111;
-  display:inline-block;
-  padding:5px 14px;
-  border-radius:30px;
-  font-size:11px;
-  font-weight:700;
-  margin-bottom:18px;
-}
-
-.kb-title{
-  font-size:52px;
-  font-family:'Montserrat',sans-serif;
-}
-
-.kb-desc{
-  margin-top:16px;
-  color:rgba(255,255,255,.7);
-}
-
-.kb-points{
-  margin-top:28px;
-}
-
-.kb-points p{
-  margin-bottom:10px;
-  font-size:14px;
-}
-
-.spec{
-  margin-top:28px;
-  background:#fff;
-  border-radius:14px;
-  overflow:hidden;
-}
-
-.spec table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:13px;
-}
-
-.spec th{
-  background:#1c1c1c;
-  color:#fff;
-  text-align:left;
-  padding:14px;
-}
-
-.spec td{
-  padding:12px 14px;
-  border-bottom:1px solid #eee;
-  color:#111;
-}
-
-.spec td:first-child{
-  width:40%;
-  color:#666;
-}
-
-/* ======================
-FOOTER
-====================== */
-
-footer{
-  background:#111;
-  color:rgba(255,255,255,.6);
-  text-align:center;
-  padding:45px 20px;
-  font-size:12px;
-}
-
-footer strong{
-  color:#fff;
-}
-
-/* ======================
-RESPONSIVE
-====================== */
-
-@media(max-width:900px){
-
-.hero h1{
-  font-size:42px;
-}
-
-.kickboard{
-  grid-template-columns:1fr;
-}
-
-.kickboard img{
-  min-height:320px;
-}
-
-.kb-content{
-  padding:34px;
-}
-
-.grid{
-  grid-template-columns:1fr;
-}
-
-}
-
-</style>
+<title>取扱商材 | OKN合同会社</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-slate-50 text-slate-900">
 
-<header>
+<header class="border-b border-slate-200 bg-white">
+<div class="mx-auto max-w-7xl px-4 py-4 flex justify-between items-center">
+<div>
+<div class="text-2xl font-bold">OKN合同会社</div>
+<div class="text-xs text-slate-500">Trade & Industrial Materials</div>
+</div>
 
-<a href="index.html" class="logo">
-OKN<span>.</span>LLC
-</a>
-
-<nav>
-
-<a href="#construction">
-建築資材
-</a>
-
-<a href="#mobility">
-Mobility
-</a>
-
-<a class="nav-btn"
-href="https://www.okn-godo.com/お問い合わせ"
-target="_blank">
-
-お問い合わせ
-
-</a>
-
+<nav class="flex gap-6 text-sm">
+<a href="index.html">トップ</a>
+<a href="company.html">会社案内</a>
+<a href="features.html">強み</a>
+<a href="Inquiry.htm">お問い合わせ</a>
 </nav>
-
+</div>
 </header>
 
-<section class="hero">
+<main class="mx-auto max-w-7xl px-4 py-16">
 
-<div class="hero-inner">
-
-<h1>
-PRODUCT<span>S</span>
-</h1>
-
-<p>
-建築資材・工事現場用品・Mobility & Lifehack
+<div class="mb-12">
+<h1 class="text-5xl font-bold">取扱商材</h1>
+<p class="mt-4 text-slate-600">
+建築資材・Mobility関連・貿易関連商品を取り扱っています。
 </p>
-
 </div>
 
-</section>
+<div class="grid gap-8 md:grid-cols-2">
 
-<main>
+<div class="rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
+<h2 class="text-2xl font-bold">建築資材・用品・部品</h2>
 
-<!-- =====================
-建築資材
-===================== -->
+<div class="mt-6 space-y-4">
 
-<section class="section" id="construction">
-
-<div class="section-header">
-
-<h2 class="section-title">
-建築資材・用品
-</h2>
-
-<span class="section-en">
-CONSTRUCTION MATERIALS
-</span>
-
-<span class="section-badge">
-OKN SELECT
-</span>
-
+<a href="silent_sheet.htm"
+class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50">
+<div class="text-xl font-semibold">防音シート</div>
+<div class="mt-2 text-sm text-slate-500">
+工事現場・建築用途向け防音シート
 </div>
+</a>
 
-<div class="grid">
-
-<!-- 防音シート -->
-
-<div class="card">
-
-<img
-class="card-img"
-src="https://okn-llc.github.io/image/BO-SHEET_01.jpeg"
-alt="防音シート">
-
-<div class="card-body">
-
-<span class="qty">
-防音シート
-</span>
-
-<h3 class="card-title">
-防音シート 1.8m×5.4m
-</h3>
-
-<div class="card-text">
-
-<span>厚み：0.5mm</span>
-<span>重量：約7.6kg／枚</span>
-<span>ハトメ間：300mmピッチ</span>
-<span>工事現場・改修工事向け</span>
-
+<a href="flame-retardant_white_sheet.htm"
+class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50">
+<div class="text-xl font-semibold">白防炎シート</div>
+<div class="mt-2 text-sm text-slate-500">
+防炎性能を備えた建築用シート
 </div>
+</a>
 
-<a
-class="btn"
-href="https://square.link/u/gHGGGUtP"
-target="_blank">
-
-商品を見る →
-
+<a href="mesh_sheet.htm"
+class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50">
+<div class="text-xl font-semibold">メッシュシート</div>
+<div class="mt-2 text-sm text-slate-500">
+安全性・通気性を考慮した現場用資材
+</div>
 </a>
 
 </div>
 </div>
 
-<!-- 白防炎シート -->
+<div class="rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
+<h2 class="text-2xl font-bold">Mobility & LifeHack</h2>
 
-<div class="card">
+<div class="mt-6 space-y-4">
 
-<img
-class="card-img"
-src="https://okn-llc.github.io/image/white_mesh.jpg"
-alt="白防炎シート">
-
-<div class="card-body">
-
-<span class="qty">
-消防庁認定
-</span>
-
-<h3 class="card-title">
-白防炎シート
-</h3>
-
-<div class="card-text">
-
-<span>消防庁認定ラベル付</span>
-<span>建築養生用</span>
-<span>ハトメピッチ：450mm</span>
-<span>高耐久タイプ</span>
-
-</div>
-
-<a
-class="btn"
-href="https://square.link/u/N1Wf5wAd"
-target="_blank">
-
-商品を見る →
-
-</a>
-
-</div>
-</div>
-
-<!-- メッシュシート -->
-
-<div class="card">
-
-<img
-class="card-img"
-src="https://okn-llc.github.io/image/Black%20mesh%20sheet.png"
-alt="防炎メッシュシート">
-
-<div class="card-body">
-
-<span class="qty">
-黒色メッシュ
-</span>
-
-<h3 class="card-title">
-防炎メッシュシート
-</h3>
-
-<div class="card-text">
-
-<span>防炎タイプ</span>
-<span>風抜け性能あり</span>
-<span>建築足場用</span>
-<span>黒色仕様</span>
-
-</div>
-
-<a
-class="btn"
-href="https://square.link/u/WsI7DlkM"
-target="_blank">
-
-商品を見る →
-
-</a>
-
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================
-KICKBOARD
-===================== -->
-
-<section class="section" id="mobility">
-
-<div class="section-header">
-
-<h2 class="section-title">
-Mobility & Lifehack
-</h2>
-
-<span class="section-en">
-ELECTRIC KICKBOARD
-</span>
-
-</div>
-
-<div class="kickboard">
-
-<img
-src="https://okn-llc.github.io/image/EKOKN-01_00.jpg"
-alt="EKOKN-O1">
-
-<div class="kb-content">
-
-<span class="kb-tag">
+<a href="kickboard.html"
+class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50">
+<div class="text-xl font-semibold">
 特定原動機付キックボード
-</span>
-
-<h2 class="kb-title">
-EKOKN-O1
-</h2>
-
-<p class="kb-desc">
-
-日常にスマートな移動手段を。<br>
-通勤・通学・街乗りをもっと快適に。
-
-</p>
-
-<div class="kb-points">
-
-<p>● 最高速度20km/h</p>
-<p>● 最大航続距離30km</p>
-<p>● 折りたたみ式</p>
-<p>● スマホアプリ対応</p>
-<p>● LEDライト装備</p>
-<p>● 充電時間：約4〜5時間</p>
-
 </div>
 
-<a
-class="btn"
-style="margin-top:28px;"
-href="https://square.link/u/6NJBp4WS"
-target="_blank">
-
-商品を見る →
-
+<div class="mt-2 text-sm text-slate-500">
+次世代モビリティ関連商品
+</div>
 </a>
 
-<div class="spec">
+</div>
 
-<table>
+<h2 class="mt-10 text-2xl font-bold">
+貿易 / 輸出入全般
+</h2>
 
-<tr>
-<th colspan="2">
-基本スペック
-</th>
-</tr>
+<div class="mt-6 rounded-2xl border border-slate-200 p-5">
+<div class="text-xl font-semibold">
+海外仕入・輸出入サポート
+</div>
 
-<tr>
-<td>商品名</td>
-<td>EKOKN-O1</td>
-</tr>
-
-<tr>
-<td>最高速度</td>
-<td>20km/h</td>
-</tr>
-
-<tr>
-<td>航続距離</td>
-<td>20〜30km</td>
-</tr>
-
-<tr>
-<td>バッテリー</td>
-<td>36V 270Wh</td>
-</tr>
-
-<tr>
-<td>充電時間</td>
-<td>約4〜5時間</td>
-</tr>
-
-<tr>
-<td>重量</td>
-<td>20kg</td>
-</tr>
-
-<tr>
-<td>最大荷重</td>
-<td>120kg</td>
-</tr>
-
-<tr>
-<td>保証期間</td>
-<td>6ヶ月</td>
-</tr>
-
-</table>
-
+<div class="mt-2 text-sm text-slate-500">
+海外工場との交渉・調達・物流対応
+</div>
 </div>
 
 </div>
 
 </div>
-
-</section>
 
 </main>
 
-<footer>
-
-<strong>
-OKN合同会社（OKN LLC）
-</strong>
-
-<br><br>
-
-〒590-0106 大阪府堺市南区豊田744-1
-
-<br>
-
-TEL：072-349-6888
-
-<br>
-
-営業時間：月〜金 9:00〜17:00
-
-<br><br>
-
-© OKN LLC All Rights Reserved.
-
+<footer class="border-t border-slate-200 bg-white">
+<div class="mx-auto max-w-7xl px-4 py-8 text-sm text-slate-500">
+© OKN合同会社 All Rights Reserved.
+</div>
 </footer>
 
 </body>
