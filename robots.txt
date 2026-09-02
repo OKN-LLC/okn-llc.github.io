@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://okn-llc.github.io/sitemap.xml
